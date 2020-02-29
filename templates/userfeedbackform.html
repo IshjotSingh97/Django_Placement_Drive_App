@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block title %}UserFeedBack{% endblock %}
+{% block content %}
+<form style="margin-top: 10rem;" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit">
+</form>
+{% endblock %}
