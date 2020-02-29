@@ -154,3 +154,4 @@ django_heroku.settings(locals())
 from crispy_forms_foundation.settings import *
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
