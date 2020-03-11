@@ -6,7 +6,7 @@ class Post(models.Model):
     description = models.CharField(max_length=1000)
     date = models.DateField(auto_now_add=True)
     link = models.URLField(max_length=100)
-    image = models.ImageField(upload_to="media")
+    image = models.URLField(max_length=100)
 
 class UserFeedback(models.Model):
     subject = models.CharField(max_length=100)
