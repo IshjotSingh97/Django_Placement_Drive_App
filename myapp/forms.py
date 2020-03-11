@@ -1,5 +1,7 @@
 from django import forms
+from .models import *
 
-class UserfeedbackForm(forms.Form):
-    title = forms.CharField(widget=forms.TextInput,max_length=100)
-    subject = forms.CharField(widget=forms.Textarea) 
+class UserfeedbackForm(forms.ModelForm):
+    class Meta:
+        model = UserFeedback
+        fields = ['subject','feedback']

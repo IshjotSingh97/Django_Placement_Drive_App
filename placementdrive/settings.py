@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&$!=lun(^!6p(snb+dj^xl3s!(yr!!0g)soqe+3*1nb_!sc)#8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_forms_foundation',
     'django_extensions',
+    'reset_migrations',
     'myapp'
 ] 
 
@@ -132,13 +133,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
+# MEDIA
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/media')
+
+# ALL AUTH
 AUTHENTICATION_BACKENDS = ( 
     'django.contrib.auth.backends.ModelBackend', 
     'allauth.account.auth_backends.AuthenticationBackend', 
@@ -150,7 +156,9 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_LOGOUT_REDIRECT_URL ='/' 
 # redirects to profile page if not configured. 
 LOGIN_REDIRECT_URL = '/'
-
+# Logout GET/POST
+ACCOUNT_LOGOUT_ON_GET = True
+# id
 SITE_ID=1
 
 django_heroku.settings(locals())
