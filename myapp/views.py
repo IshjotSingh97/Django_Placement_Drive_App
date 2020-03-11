@@ -49,17 +49,20 @@ def userfeedbackform(request):
 
 @login_required
 def addtofavourite(request,uid,pid):
-    obj = Favourite()
-    obj.uid = uid
-    obj.pid = pid
-    obj.posttitle = Post.objects.get(id=pid).title
-    obj.postlink = Post.objects.get(id=pid).link
-    obj.save()
-    mydictionary ={
-        "add" : True,
-        "favourites" : Favourite.objects.filter(uid=uid)
-    }
-    return render(request,'favourite.html',context=mydictionary)
+    try:
+        obj = Favourite()
+        obj.uid = uid
+        obj.pid = pid
+        obj.posttitle = Post.objects.get(id=pid).title
+        obj.postlink = Post.objects.get(id=pid).link
+        obj.save()
+        mydictionary ={
+            "add" : True,
+            "favourites" : Favourite.objects.filter(uid=uid)
+        }
+        return render(request,'favourite.html',context=mydictionary)
+    except:
+        return redirect('account_login')
 
 @login_required
 def getfavourite(request,uid):
