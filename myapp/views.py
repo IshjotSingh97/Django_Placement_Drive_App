@@ -16,7 +16,7 @@ def server(request):
 def index(request):
     mydictionary = {
         "posts" : Post.objects.all(),
-        "message" : "Hey check out this amazing post at Placement Drive\nStay tuned for more...\n"
+        "message" : "Hey check out this amazing post at Placement Drive"
     }
     return render(request,'index.html',context=mydictionary)
 
