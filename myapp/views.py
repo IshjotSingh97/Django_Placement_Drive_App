@@ -15,7 +15,8 @@ def server(request):
 
 def index(request):
     mydictionary = {
-        "posts" : Post.objects.all()
+        "posts" : Post.objects.all(),
+        "message" : "Hey check out this amazing post at Placement Drive\nStay tuned for more...\n"
     }
     return render(request,'index.html',context=mydictionary)
 
@@ -23,7 +24,8 @@ def search(request):
     query = request.GET['query']
     mydictionary = {
         "posts" : Post.objects.all().filter(Q(title__icontains=query)
-        ).order_by('-date')
+        ).order_by('-date'),
+        "message" : "Hey check out this amazing post at Placement Drive\nStay tuned for more...\n"
     }
     return render(request,'index.html',context=mydictionary)
 
