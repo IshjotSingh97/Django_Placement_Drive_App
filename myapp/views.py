@@ -22,10 +22,9 @@ def index(request):
 def search(request):
     query = request.GET['query']
     mydictionary = {
-        "posts" : Post.objects.all().filter(Q(title__icontains=query) | Q(description__icontains=query) | Q(link__icontains=query) | Q(date__icontains=query)
+        "posts" : Post.objects.all().filter(Q(title__icontains=query)
         ).order_by('-date')
     }
-    print(mydictionary)
     return render(request,'index.html',context=mydictionary)
 
 def about(request):
