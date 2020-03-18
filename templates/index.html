@@ -19,12 +19,12 @@
   <div class="container-fluid" id="preloadercard" style="background-color: black;height: 100%;display: block;position: absolute;left: 0;top: 0;width: 100%;z-index: 99;">
     <div class="row">
       <div class="col-md-12">
-        <div class="text-center"style="color:white;height:50vh">
+        <div class="text-center"style="color:yellow;height:50vh">
           <div class="spinner-border" role="status" style="margin-top:45vh;">
             <span class="sr-only">Loading...</span>
           </div>
         </div>
-        <p class="" style="color: white;font-weight: bold;margin: 0 auto;display: block;text-align: center;">Loading...</p>
+        <p class="" style="color: yellow;font-weight: bold;margin: 0 auto;display: block;text-align: center;">Loading...</p>
       </div>
     </div>
   </div>
@@ -120,7 +120,7 @@
             <a href="{% url 'account_login' %}" class="badge badge-danger" style="margin: 0 auto;">Login To Add To My
               Favourites</a>
             {% endif %}
-            <a href="whatsapp://send?text=%0a‎Hello%0aWorld" class="badge badge-success" style="margin: 0 auto;"
+            <a href="whatsapp://send?text={{message}}%0Title: {{post.title}}%0Date Added: {{post.date}}%0Stay tuned for more at Placement Drive%0https://placementdriveappishjot.herokuapp.com/" class="badge badge-success" style="margin: 0 auto;"
               data-action="share/whatsapp/share">Share By WhatsApp</a>
           </div>
         </div>
