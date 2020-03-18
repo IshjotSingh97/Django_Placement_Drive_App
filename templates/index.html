@@ -117,7 +117,7 @@
             <a href="/addtofavourite/{{user.id}}/{{post.id}}" class="badge badge-warning" style="margin: 0 auto;">Add To
               My Favourites</a>
             {% else %}
-            <a href="{% url 'account_login' %}" class="badge badge-dark" style="margin: 0 auto;">Login To Add To My
+            <a href="{% url 'account_login' %}" class="badge badge-danger" style="margin: 0 auto;">Login To Add To My
               Favourites</a>
             {% endif %}
             <a href="whatsapp://send?text={{post.title}}" class="badge badge-success" style="margin: 0 auto;"
