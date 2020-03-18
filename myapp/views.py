@@ -25,7 +25,7 @@ def search(request):
     mydictionary = {
         "posts" : Post.objects.all().filter(Q(title__icontains=query)
         ).order_by('-date'),
-        "message" : "Hey check out this amazing post at Placement Drive\nStay tuned for more...\n"
+        "message" : "Hey check out this amazing post at Placement Drive"
     }
     return render(request,'index.html',context=mydictionary)
 
