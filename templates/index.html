@@ -11,26 +11,42 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+  <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
   <title>{% block title %}Placement Drive{% endblock %}</title>
+  <link rel="icon" href="{% static 'logo.png' %}" type="image/gif" sizes="16x16">
+  <style>
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: #29d;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}
+
+  </style>
 </head>
 
 <body class="bg-light" style="margin-bottom: 20rem;">
-  <div class="container-fluid" id="preloadercard" style="background-color: black;height: 100%;display: block;position: absolute;left: 0;top: 0;width: 100%;z-index: 99;">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="text-center"style="color:yellow;height:50vh">
-          <div class="spinner-border" role="status" style="margin-top:45vh;">
-            <span class="sr-only">Loading...</span>
-          </div>
-        </div>
-        <p class="" style="color: yellow;font-weight: bold;margin: 0 auto;display: block;text-align: center;">Loading...</p>
-      </div>
-    </div>
-  </div>
+
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand">Placement Drive</a>
+    
+    <img class="navbar-brand" src="{% static 'logo.png' %}" style="height: 4rem;width: 4rem;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -120,7 +136,7 @@
             <a href="{% url 'account_login' %}" class="badge badge-danger" style="margin: 0 auto;">Login To Add To My
               Favourites</a>
             {% endif %}
-            <a href="whatsapp://send?text={{message}}%0aTitle: {{post.title}}%0aDate Added: {{post.date}}%0aLink: {{post.link}}%0aStay tuned for more at Placement Drive%0ahttps://placementdriveappishjot.herokuapp.com/" class="badge badge-success" style="margin: 0 auto;"
+            <a href="whatsapp://send?text={{message}}%0aTitle: {{post.title}}%0aDate Added: {{post.date}}%0aLink: {{post.link}}%0aStay tuned for more at Placement Drive%0ahttps://bit.ly/placementdriveapp" class="badge badge-success" style="margin: 0 auto;"
               data-action="share/whatsapp/share">Share By WhatsApp</a>
           </div>
         </div>
@@ -149,18 +165,6 @@
     crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      //Preloader
-      preloaderFadeOutTime = 1000;
-      function hidePreloader() {
-        var preloadercard = $('#preloadercard');
-        jQuery('#preloadercard').fadeOut(preloaderFadeOutTime);
-      }
-      
-     hidePreloader();
-    });
-  </script>
 </body>
 
 </html>
