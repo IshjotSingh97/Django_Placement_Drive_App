@@ -47,7 +47,7 @@
   </style>
 </head>
 
-<body style="margin-bottom: 20rem;" class="winter-neva-gradient">
+<body style="margin-bottom: 20rem;" style="background-color: white;">
 
 
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
@@ -114,7 +114,7 @@
     <div class="row">
       <div class="col-md-6" style="margin: 1rem auto 1rem auto;">
         <form method="GET" action="{% url 'search' %}">
-          <input class="form-control" type="search" placeholder="Search For More Opportunities" aria-label="Search" name="query" id="query">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="query" id="query">
           <button class="btn btn-primary" type="submit"
             style="display: block;margin: 1rem auto 1rem auto;">Search</button>
         </form>
@@ -123,80 +123,73 @@
   </div>
 
   <div class="container-fluid" style="margin-bottom: 1rem;">
-    {% block content %}
-    <div class="row">
-      <div class="col-md-12">
-        <div class="container my-5 z-depth-1" style="background: white;">
-
-
-          <!--Section: Content-->
-          <section class="dark-grey-text p-5">
-        
-            <!-- Grid row -->
-            <div class="row">
-        
-              <!-- Grid column -->
-              <div class="col-md-5 mb-4 mb-md-0" style="margin: 0 auto;">
-        
-                <div class="view">
-                  <img src="https://mdbootstrap.com/img/illustrations/undraw_Group_chat_unwm.svg" class="img-fluid" alt="smaple image">
-                  <h1 class="h1-responsive" style="text-align: center;margin: 1rem auto 0 auto;display: block;font-size: 1rem;font-weight: bold;">#PlacementDrive</h1>
-                </div>
-        
-              </div>
-              <!-- Grid column -->
-        
-              <!-- Grid column -->
-          
-              <!-- Grid column -->
-        
-            </div>
-            <!-- Grid row -->
-            
-          </section>
-          <!--Section: Content-->
-        
-        
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      {% for post in posts %}
-      <div class="col-md-4"></div>
-      <div class="col-md-4" style="margin: 1rem auto 0 auto;">
-        <div class="card">
-          <img class="card-img-top img-fluid" src="{{post.image}}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title" style="text-align: center;">{{post.title}}</h5>
-            <p class="card-text">{{post.description}}</p>
-            <p class="card-text">{{post.date}}</p>
-            <ul class="list-group">
-            <li class="list-group-item">
-            <a href="{{post.link}}" class="badge badge-primary" style="margin: 0 auto;width: 100%;">Go To Link</a>
-            </li>
-            <li class="list-group-item">
-            {% if user.is_authenticated %}
-            <a href="/addtofavourite/{{user.id}}/{{post.id}}" class="badge badge-warning" style="margin: 0 auto;width: 100%">Add To
-              My Favourites</a>
-            {% else %}
-            <a href="{% url 'account_login' %}" class="badge badge-danger" style="margin: 0 auto;width: 100%">Login To Add To My
-              Favourites</a>
-            {% endif %}
-            </li>
-            <li class="list-group-item">
-            <a href="whatsapp://send?text={{message}}%0aTitle: {{post.title}}%0aDate Added: {{post.date}}%0aLink: {{post.link}}%0aStay tuned for more at Placement Drive%0ahttps://bit.ly/placementdriveapp" class="badge badge-success" style="margin: 0 auto;width: 100%"
-              data-action="share/whatsapp/share">Share By WhatsApp</a>
-            </li>
-            <li class="list-group-item">
-              <a href="{% url 'userfeedbackform' %}" class="badge badge-danger" style="margin: 0 auto;width: 100%">Send FeedBack</a>
-            </li>
-            </ul>
+    <!-- Full Page Intro -->
+  <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+      <!-- Content -->
+      <div class="container">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft" data-wow-delay="0.3s">
+            <h1 class="h1-responsive font-weight-bold mt-sm-5">Make purchases with our app </h1>
+            <hr class="hr-light">
+            <h6 class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi
+              fuga nesciunt
+              dolorum nulla magnam veniam sapiente! Commodi sequi non animi ea dolor molestiae
+              iste.</h6>
+            <a class="btn btn-white btn-rounded">Download</a>
+            <a class="btn btn-outline-white btn-rounded">Learn more</a>
           </div>
+          <!--Grid column-->
+          <!--Grid column-->
+          <div class="col-md-6 col-xl-5 mt-xl-5 wow fadeInRight" data-wow-delay="0.3s">
+            <img src="https://mdbootstrap.com/img/Mockups/Transparent/Small/admin-new.png" alt="" class="img-fluid">
+          </div>
+          <!--Grid column-->
         </div>
+        <!--Grid row-->
       </div>
-      <div class="col-md-4"></div>
-      {% endfor %}
+      <!-- Content -->
     </div>
+    <!-- Mask & flexbox options-->
+  </div>
+  <!-- Full Page Intro -->
+    {% block content %}
+   <!-- Full Page Intro -->
+  <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/architecture.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+      <!-- Content -->
+      <div class="container">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft" data-wow-delay="0.3s">
+            <h1 class="h1-responsive font-weight-bold mt-sm-5">Make purchases with our app </h1>
+            <hr class="hr-light">
+            <h6 class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi
+              fuga nesciunt
+              dolorum nulla magnam veniam sapiente! Commodi sequi non animi ea dolor molestiae
+              iste.</h6>
+            <a class="btn btn-white btn-rounded">Download</a>
+            <a class="btn btn-outline-white btn-rounded">Learn more</a>
+          </div>
+          <!--Grid column-->
+          <!--Grid column-->
+          <div class="col-md-6 col-xl-5 mt-xl-5 wow fadeInRight" data-wow-delay="0.3s">
+            <img src="https://mdbootstrap.com/img/Mockups/Transparent/Small/admin-new.png" alt="" class="img-fluid">
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Content -->
+    </div>
+    <!-- Mask & flexbox options-->
+  </div>
+  <!-- Full Page Intro -->
     {% endblock %}
   </div>
 
