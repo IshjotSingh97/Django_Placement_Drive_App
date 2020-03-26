@@ -33,20 +33,8 @@ def about(request):
     return render(request,'about.html')
 
 def userfeedbackform(request):
-    if request.method == "POST":
-        form = UserfeedbackForm(request.POST)
-        if form.is_valid():
-            form.save()
-            mydictionary = {
-                "feedback":True,
-                "form" : UserfeedbackForm()
-            }
-            return render(request,'userfeedbackform.html',context=mydictionary)
-    elif request.method == "GET":
-        mydictionary = {
-            "form" :UserfeedbackForm()
-        }
-        return render(request,'userfeedbackform.html',context=mydictionary)
+    return render(request,'userfeedbackform.html')
+    
 
 @login_required
 def addtofavourite(request,uid,pid):
@@ -72,3 +60,13 @@ def getfavourite(request,uid):
     }
     return render(request,'favourite.html',context=mydictionary)
 
+def submituserfeedbackform(request):
+    if request.method == 'GET':
+        obj = UserFeedback()
+        obj.subject = request.GET['title']
+        obj.feedback = request.GET['subject']
+        obj.save()
+    mydictionary = {
+        "feedback" : True
+    }
+    return render(request,'userfeedbackform.html',context=mydictionary)

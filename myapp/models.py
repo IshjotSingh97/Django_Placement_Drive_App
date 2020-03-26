@@ -7,6 +7,7 @@ class Post(models.Model):
     date = models.DateField(auto_now_add=True)
     link = models.URLField(max_length=1000)
     image = models.URLField(max_length=1000)
+    
 
 class UserFeedback(models.Model):
     subject = models.CharField(max_length=100)

@@ -1,58 +1,57 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <!-- Bootstrap CSS -->
   <!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-<!-- Google Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/css/mdb.min.css" rel="stylesheet">
-  <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/css/mdb.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
   <title>{% block title %}Placement Drive{% endblock %}</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/IshjotSingh97/Django_Placement_Drive_Images/master/logo.png" type="image/gif" sizes="16x16">
+  <link rel="icon" href="https://raw.githubusercontent.com/IshjotSingh97/Django_Placement_Drive_Images/master/logo.png"
+    type="image/gif" sizes="16x16" />
   <style>
-.pace {
-  -webkit-pointer-events: none;
-  pointer-events: none;
+    .pace {
+      -webkit-pointer-events: none;
+      pointer-events: none;
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
 
-.pace-inactive {
-  display: none;
-}
+    .pace-inactive {
+      display: none;
+    }
 
-.pace .pace-progress {
-  background: #29d;
-  position: fixed;
-  z-index: 2000;
-  top: 0;
-  right: 100%;
-  width: 100%;
-  height: 2px;
-}
-
+    .pace .pace-progress {
+      background: #29d;
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      right: 100%;
+      width: 100%;
+      height: 2px;
+    }
   </style>
 </head>
 
-<body style="margin-bottom: 20rem;" class="winter-neva-gradient">
-
-
+<body style="margin-bottom: 20rem;" class="blue-gradient">
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
-    
-    <img class="navbar-brand" src="https://raw.githubusercontent.com/IshjotSingh97/Django_Placement_Drive_Images/master/logo.png" style="height: 4rem;width: 4rem;">
+    <img class="navbar-brand"
+      src="https://raw.githubusercontent.com/IshjotSingh97/Django_Placement_Drive_Images/master/logo.png"
+      style="height: 4rem;width: 4rem;" />
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -94,8 +93,8 @@
             Register
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'account_signup' %}"> Sign
-              Up</a>
+            <a class="dropdown-item" href="{% url 'account_signup' %}">
+              Sign Up</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{% url 'account_login' %}">
               Sign In</a>
@@ -106,17 +105,18 @@
         </li>
         {% endif %}
       </ul>
-
     </div>
   </nav>
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-6" style="margin: 1rem auto 1rem auto;">
+      <div class="col-md-6 form-group shadow-textarea" style="margin: 1rem auto 1rem auto;">
         <form method="GET" action="{% url 'search' %}">
-          <input class="form-control" type="search" placeholder="Search For More Opportunities" aria-label="Search" name="query" id="query">
-          <button class="btn btn-primary" type="submit"
-            style="display: block;margin: 1rem auto 1rem auto;">Search</button>
+          <input class="form-control z-depth-1" type="search" placeholder="Search For More Opportunities"
+            aria-label="Search" name="query" id="query" />
+          <button class="btn peach-gradient" type="submit" style="display: block;margin: 1rem auto 1rem auto;">
+            Search
+          </button>
         </form>
       </div>
     </div>
@@ -124,39 +124,40 @@
 
   <div class="container-fluid" style="margin-bottom: 1rem;">
     {% block content %}
+    <div class="container-fluid">
+      <div class="col-md-12">
+        <h1 class="h1-responsive" style="color: white;font-weight: bold;text-align: center;margin: 0 auto;">
+          #<span class="typed"></span>
+        </h1>
+      </div>
+    </div>
     <div class="row">
       <div class="col-md-12">
         <div class="container my-5 z-depth-1" style="background: white;">
-
-
           <!--Section: Content-->
           <section class="dark-grey-text p-5">
-        
             <!-- Grid row -->
             <div class="row">
-        
               <!-- Grid column -->
               <div class="col-md-5 mb-4 mb-md-0" style="margin: 0 auto;">
-        
                 <div class="view">
-                  <img src="https://mdbootstrap.com/img/illustrations/undraw_Group_chat_unwm.svg" class="img-fluid" alt="smaple image">
-                  <h1 class="h1-responsive" style="text-align: center;margin: 1rem auto 0 auto;display: block;font-size: 1rem;font-weight: bold;">#PlacementDrive</h1>
+                  <img src="https://mdbootstrap.com/img/illustrations/undraw_Group_chat_unwm.svg" class="img-fluid"
+                    alt="smaple image" />
+                  <h1 class="h1-responsive"
+                    style="text-align: center;margin: 1rem auto 0 auto;display: block;font-size: 1rem;font-weight: bold;">
+                    #PlacementDrive
+                  </h1>
                 </div>
-        
               </div>
               <!-- Grid column -->
-        
+
               <!-- Grid column -->
-          
+
               <!-- Grid column -->
-        
             </div>
             <!-- Grid row -->
-            
           </section>
           <!--Section: Content-->
-        
-        
         </div>
       </div>
     </div>
@@ -165,31 +166,35 @@
       <div class="col-md-4"></div>
       <div class="col-md-4" style="margin: 1rem auto 0 auto;">
         <div class="card">
-          <img class="card-img-top img-fluid" src="{{post.image}}" alt="Card image cap">
+          <img class="card-img-top img-fluid" src="{{post.image}}" alt="Card image cap" />
           <div class="card-body">
-            <h5 class="card-title" style="text-align: center;">{{post.title}}</h5>
+            <h5 class="card-title" style="text-align: center;">
+              {{post.title}}
+            </h5>
             <p class="card-text">{{post.description}}</p>
             <p class="card-text">{{post.date}}</p>
             <ul class="list-group">
-            <li class="list-group-item">
-            <a href="{{post.link}}" class="badge badge-primary" style="margin: 0 auto;width: 100%;">Go To Link</a>
-            </li>
-            <li class="list-group-item">
-            {% if user.is_authenticated %}
-            <a href="/addtofavourite/{{user.id}}/{{post.id}}" class="badge badge-warning" style="margin: 0 auto;width: 100%">Add To
-              My Favourites</a>
-            {% else %}
-            <a href="{% url 'account_login' %}" class="badge badge-danger" style="margin: 0 auto;width: 100%">Login To Add To My
-              Favourites</a>
-            {% endif %}
-            </li>
-            <li class="list-group-item">
-            <a href="whatsapp://send?text={{message}}%0aTitle: {{post.title}}%0aDate Added: {{post.date}}%0aLink: {{post.link}}%0aStay tuned for more at Placement Drive%0ahttps://bit.ly/placementdriveapp" class="badge badge-success" style="margin: 0 auto;width: 100%"
-              data-action="share/whatsapp/share">Share By WhatsApp</a>
-            </li>
-            <li class="list-group-item">
-              <a href="{% url 'userfeedbackform' %}" class="badge badge-danger" style="margin: 0 auto;width: 100%">Send FeedBack</a>
-            </li>
+              <li class="list-group-item">
+                <a href="{{post.link}}" class="badge badge-primary" style="margin: 0 auto;width: 100%;">Go To Link</a>
+              </li>
+              <li class="list-group-item">
+                {% if user.is_authenticated %}
+                <a href="/addtofavourite/{{user.id}}/{{post.id}}" class="badge badge-warning"
+                  style="margin: 0 auto;width: 100%">Add To My Favourites</a>
+                {% else %}
+                <a href="{% url 'account_login' %}" class="badge badge-warning" style="margin: 0 auto;width: 100%">Login
+                  To Add To My Favourites</a>
+                {% endif %}
+              </li>
+              <li class="list-group-item">
+                <a href="whatsapp://send?text={{message}}%0aTitle: {{post.title}}%0aDate Added: {{post.date}}%0aLink: {{post.link}}%0aStay tuned for more at Placement Drive%0ahttps://bit.ly/placementdriveapp"
+                  class="badge badge-success" style="margin: 0 auto;width: 100%"
+                  data-action="share/whatsapp/share">Share By WhatsApp</a>
+              </li>
+              <li class="list-group-item">
+                <a href="{% url 'userfeedbackform' %}" class="badge badge-danger"
+                  style="margin: 0 auto;width: 100%">Send FeedBack</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -201,22 +206,135 @@
   </div>
 
   <footer class="fixed-bottom" style="bottom: -1rem;">
-    <p style="text-align:center;display: block;color: white;background-color: black;font-size: 0.7rem;">Placement Drive
-      Copyright 2020</p>
+    <p style="text-align:center;display: block;color: white;background-color: black;font-size: 0.7rem;">
+      <i class="fas fa-copyright"></i> Placement Drive Copyright 2020
+    </p>
   </footer>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <!-- JQuery -->
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/js/mdb.min.js"></script>
-
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.1/js/mdb.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $(".typed").typed({
+        strings: [
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive",
+          "Placements",
+          "Internships",
+          "Preperations",
+          "PlacementDrive"
+        ],
+        // Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
+        stringsElement: null,
+        // typing speed
+        typeSpeed: 20,
+        // time before typing starts
+        startDelay: 1200,
+        // backspacing speed
+        backSpeed: 20,
+        // time before backspacing
+        backDelay: 500,
+        // loop
+        loop: true,
+        // false = infinite
+        loopCount: 5,
+        // show cursor
+        showCursor: false,
+        // character for cursor
+        cursorChar: "|",
+        // attribute to type (null == text)
+        attr: null,
+        // either html or text
+        contentType: "html",
+        // call when done callback function
+        callback: function () { },
+        // starting callback function before each string
+        preStringTyped: function () { },
+        //callback for every typed string
+        onStringTyped: function () { },
+        // callback for reset
+        resetCallback: function () { }
+      });
+    });
+  </script>
 </body>
 
 </html>
