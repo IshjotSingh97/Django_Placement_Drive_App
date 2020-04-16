@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-md-12" style="margin: 0 auto 5rem auto;text-align:center">
             {% load static %}
-            <table class="table">
+            <table class="table" style="background-color: white;">
                 <thead>
                   <tr>
                     <th scope="col">Post Title</th>
@@ -27,13 +27,13 @@
                     {% for favourite in favourites %}
                     <tr>
                         <td>{{favourite.posttitle}}</td>
-                        <td><a href="{{favourite.postlink}}">Go To Link</a></td>
+                        <td><a href="{{favourite.postlink}}" style="color: blue;">Click Here To Go To Link</a></td>
                         <td>{{favourite.date}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-            <a href="{% url 'index' %}" style="margin:0rem auto 0rem auto;" class="btn btn-primary">Go Back Home</a>
+            <a href="{% url 'index' %}" style="margin:0rem auto 0rem auto;" class="btn peach-gradient">Go Back Home</a>
         </div>
     </div>
 </div>
