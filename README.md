@@ -1,5 +1,5 @@
 # Django_Placement_Drive_App
-Django_Placement_Drive_App
+Django_Placement_Drive_App - Students can look for jobs and internships.
 
 # How to run the project on localhost
 ```
